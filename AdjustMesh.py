@@ -22,22 +22,27 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 =============================================================================
 """
 
+# Get existing textile. May need to add name as parameter if more than one textile created
 textile = GetTextile()
-YarnMeshes = MeshVector()
 
+# Create vector of CMesh and resize to number of yarns in textile
+YarnMeshes = MeshVector()
 NumYarns = textile.GetNumYarns()
 YarnMeshes.resize(NumYarns)
+
+# May need to adjust tolerance depending on model
 Tol = 1e-6
 
-
+# Create a volume mesh for each yarn, clipped to domain and add to mesh vector
 Domain = textile.GetDomain()
-
 for i in range(NumYarns):
     yarn = textile.GetYarn(i)
     yarn.AddVolumeToMesh(YarnMeshes[i], Domain)
-    
+  
+# Initialise class which does the interference adjustment  
 AdjustMesh = CAdjustMeshInterference()
 
+# Mesh is only adjusted if interference is less than one volume mesh element deep
 if ( AdjustMesh.AdjustMesh(textile, YarnMeshes, Tol) == False ):
     print("Unable to adjust mesh: intersection depths too large")
 else:
