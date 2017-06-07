@@ -21,6 +21,12 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 =============================================================================
 """
+# Script to remove small intersections between yarns in a textile
+# This uses the interference detection implemented in TexGen and then makes
+# adjustments to both yarns. Yarn area will be reduced in this process and
+# may not be a true representation of the yarn behaviour.  It was intended to 
+# remove very small intersections which prevented the model from running in
+# FE solvers.
 
 # Get existing textile. May need to add name as parameter if more than one textile created
 textile = GetTextile()
