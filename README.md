@@ -1,4 +1,4 @@
-# TexGenScripts
+## TexGenScripts
 Sample scripts to demonstrate TexGen scripting
 
 These may either be run through the TexGen GUI using the Python->RunScript menu option or, in most cases, 
