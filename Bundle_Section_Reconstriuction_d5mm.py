@@ -6,6 +6,9 @@
 #Composites Part A: Applied Science and Manufacturing, Volume 76, September 2015, Pages 262-271
 #http://www.sciencedirect.com/science/article/pii/S1359835X15001839
 
+# Python 3 version used runpy module to execute scripts from TexGen GUI which requires import of library
+from TexGen.Core import *
+
 ################################################## 
 # Create textile
 Textile = CTextile()

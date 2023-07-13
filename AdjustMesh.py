@@ -28,6 +28,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # remove very small intersections which prevented the model from running in
 # FE solvers.
 
+# Python 3 version used runpy module to execute scripts from TexGen GUI which requires import of library
+from TexGen.Core import *
+
 # Get existing textile. May need to add name as parameter if more than one textile created
 textile = GetTextile()
 

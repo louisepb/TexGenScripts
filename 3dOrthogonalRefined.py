@@ -17,6 +17,9 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # =============================================================================
 
+# Python 3 version used runpy module to execute scripts from TexGen GUI which requires import of library
+from TexGen.Core import *
+
 # Create an orthogonal textile with 6 warp and 4 weft yarns, 1.0 warp and weft spacing, 
 # warp height 0.35 and weft height 0.25. True/False selects refinement
 Textile = CTextileOrthogonal( 6, 4, 1.0, 1.0, 0.35, 0.25, True)
